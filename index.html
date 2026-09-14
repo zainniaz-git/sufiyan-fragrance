@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUFYAN FRAGRANCES | Premium Luxury Perfumes</title>
+<meta name="description" content="Discover premium fragrances from SUFYAN FRAGRANCES. Explore oud, woody, amber, fresh and signature perfumes and order directly through WhatsApp.">
+<meta property="og:title" content="SUFYAN FRAGRANCES | Premium Luxury Perfumes">
+<meta property="og:description" content="Timeless fragrances. Modern luxury. A signature worth remembering.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.svg">
+
+<link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= ANNOUNCEMENT BAR ================= -->
+
+<div class="announcement-bar">
+  <p>Discover your signature scent — premium fragrances — order via WhatsApp</p>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+<a href="#home" class="logo-link" aria-label="Sufyan Fragrances home">
+  <img src="assets/logo.svg" alt="Sufyan Fragrances logo" class="logo-img">
+</a>
+
+<nav class="nav-links" aria-label="Primary">
+  <a href="#home" class="nav-link">Home</a>
+  <a href="#shop" class="nav-link">Shop</a>
+  <a href="#categories" class="nav-link">Collection</a>
+  <a href="#story" class="nav-link">Our Story</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</nav>
+
+<div class="navbar-actions">
+  <button class="icon-btn" id="searchToggleBtn" aria-label="Search fragrances" aria-expanded="false">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+  <button class="icon-btn" id="wishlistBtn" aria-label="Open wishlist">
+    <i class="fa-regular fa-heart"></i>
+    <span class="badge" id="wishlistCount">0</span>
+  </button>
+  <button class="icon-btn" id="cartBtn" aria-label="Open shopping bag">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span class="badge" id="cartCount">0</span>
+  </button>
+</div>
+
+  </div>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Search by name, category or notes…" aria-label="Search fragrances">
+      <button id="searchCloseBtn" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <img src="assets/logo.svg" alt="Sufyan Fragrances logo" class="logo-img small">
+    <button id="mobileMenuCloseBtn" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="mobile-nav-links" aria-label="Mobile primary">
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#shop" class="mobile-nav-link">Shop</a>
+    <a href="#categories" class="mobile-nav-link">Collection</a>
+    <a href="#story" class="mobile-nav-link">Our Story</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+  </nav>
+  <a class="whatsapp-order-link" id="mobileWhatsappLink" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+  </a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<main id="mainContent">
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="home">
+    <div class="hero-texture" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">The Art of Fragrance</span>
+        <h1 class="hero-heading">Discover Your<br>Signature Scent</h1>
+        <p class="hero-sub">Timeless fragrances crafted for those who leave an impression.</p>
+        <div class="hero-actions">
+          <button class="btn btn-gold" id="exploreCollectionBtn">Explore Collection</button>
+          <button class="btn btn-outline" id="shopNowBtn">Shop Now</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <img src="assets/perfume-06.svg" alt="Sufyan Oud Royale flagship perfume bottle" class="hero-bottle">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED COLLECTION ================= -->
+
+  <section class="section" id="featured">
+    <div class="section-head">
+      <h2>The Signature Collection</h2>
+      <p>Discover fragrances crafted to become part of your identity.</p>
+    </div>
+    <div class="product-grid featured-grid" id="featuredGrid"></div>
+  </section>
+
+  <!-- ================= SHOP ================= -->
+
+  <section class="section section-alt" id="shop">
+    <div class="section-head">
+      <h2>Explore the Collection</h2>
+      <p>Eleven fragrances. One house. Find the scent that speaks for you.</p>
+    </div>
+
+<div class="shop-controls">
+  <div class="filter-chips" id="filterChips">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="men">Men</button>
+    <button class="chip" data-filter="women">Women</button>
+    <button class="chip" data-filter="unisex">Unisex</button>
+    <button class="chip" data-filter="oud">Oud</button>
+    <button class="chip" data-filter="woody">Woody</button>
+    <button class="chip" data-filter="fresh">Fresh</button>
+  </div>
+  <div class="sort-wrap">
+    <label for="sortSelect" class="visually-hidden">Sort products</label>
+    <select id="sortSelect" aria-label="Sort products">
+      <option value="featured">Featured</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="rating">Highest Rated</option>
+    </select>
+  </div>
+</div>
+
+<p class="results-meta" id="resultsMeta" aria-live="polite"></p>
+
+<div class="product-grid" id="shopGrid"></div>
+<p class="empty-state" id="shopEmptyState" hidden>No fragrance found.</p>
+
+  </section>
+
+  <!-- ================= CATEGORIES ================= -->
+
+  <section class="section" id="categories">
+    <div class="section-head">
+      <h2>Fragrance Categories</h2>
+      <p>Every mood has a note. Find yours.</p>
+    </div>
+    <div class="category-grid" id="categoryGrid"></div>
+  </section>
+
+  <!-- ================= BRAND STORY ================= -->
+
+  <section class="section story" id="story">
+    <div class="story-grid">
+      <div class="story-image">
+        <img src="assets/perfume-03.svg" alt="Sufyan Imperial perfume bottle representing the brand heritage" loading="lazy">
+      </div>
+      <div class="story-content">
+        <span class="divider-line" aria-hidden="true"></span>
+        <h2>The Story of Sufyan</h2>
+        <p>At SUFYAN FRAGRANCES, we honor the age-old traditions of perfumery while embracing a new vision of luxury. Every bottle tells a story—a harmony of rare florals, rich woods, and delicate spices. Experience a scent journey designed to leave an indelible impression.</p>
+        <span class="divider-line" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE SUFYAN ================= -->
+
+  <section class="section section-alt" id="why">
+    <div class="section-head">
+      <h2>Why Choose Sufyan</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <i class="fa-solid fa-gem"></i>
+        <h3>Authentic Craft</h3>
+        <p>Thoughtfully developed fragrances inspired by timeless perfumery traditions.</p>
+      </article>
+      <article class="feature-card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Long-Lasting</h3>
+        <p>Designed to leave a memorable impression throughout the day.</p>
+      </article>
+      <article class="feature-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Premium Experience</h3>
+        <p>Luxury fragrance experience from discovery to delivery.</p>
+      </article>
+      <article class="feature-card">
+        <i class="fa-solid fa-gift"></i>
+        <h3>Customer Care</h3>
+        <p>Personal assistance and easy WhatsApp ordering.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= FRAGRANCE NOTES ================= -->
+
+  <section class="section notes-section">
+    <div class="section-head">
+      <h2>Fragrance Notes</h2>
+      <p>The anatomy of a Sufyan scent, from first impression to final trace.</p>
+    </div>
+    <div class="notes-grid">
+      <div class="notes-card">
+        <span class="notes-label">Top Notes</span>
+        <ul><li>Fresh Citrus</li><li>Spices</li><li>Bergamot</li></ul>
+      </div>
+      <div class="notes-card">
+        <span class="notes-label">Heart Notes</span>
+        <ul><li>Rose</li><li>Jasmine</li><li>Lavender</li></ul>
+      </div>
+      <div class="notes-card">
+        <span class="notes-label">Base Notes</span>
+        <ul><li>Oud</li><li>Amber</li><li>Musk</li><li>Sandalwood</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LUXURY BANNER ================= -->
+
+  <section class="banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <h2>Wear the Impression</h2>
+      <p>Your fragrance speaks before you do.</p>
+      <button class="btn btn-gold" id="discoverSufyanBtn">Discover Sufyan</button>
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS ================= -->
+
+  <section class="section" id="reviews">
+    <div class="section-head">
+      <h2>Customer Reviews</h2>
+      <p class="reviews-disclaimer">Sample testimonials shown for illustration — not connected to a live review database.</p>
+    </div>
+    <div class="reviews-track" id="reviewsTrack"></div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+
+  <section class="section newsletter-section">
+    <div class="newsletter-box">
+      <h2>Join the Sufyan World</h2>
+      <p>Receive fragrance stories, new collection announcements and exclusive offers.</p>
+      <form id="newsletterForm" class="newsletter-form" novalidate>
+        <label for="newsletterEmail" class="visually-hidden">Email address</label>
+        <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+        <button type="submit" class="btn btn-gold">Join Us</button>
+      </form>
+      <p class="newsletter-msg" id="newsletterMsg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+
+  <section class="section contact-section" id="contact">
+    <div class="section-head">
+      <h2>Sufyan Fragrances</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>sufyanfragrances@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>+92 327 7834621</span>
+      </div>
+    </div>
+    <div class="contact-actions">
+      <a class="btn btn-outline" id="emailUsBtn" href="mailto:sufyanfragrances@gmail.com">Email Us</a>
+      <a class="btn btn-gold" id="contactWhatsappBtn" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo.svg" alt="Sufyan Fragrances logo" class="logo-img">
+      <p>Timeless fragrances. Modern luxury. A signature worth remembering.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Collection</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h3>Customer</h3>
+      <a href="#contact">Shipping</a>
+      <a id="footerWhatsappLink" target="_blank" rel="noopener">Order via WhatsApp</a>
+      <a href="#" id="privacyLink">Privacy</a>
+      <a href="#" id="termsLink">Terms</a>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <a href="mailto:sufyanfragrances@gmail.com">sufyanfragrances@gmail.com</a>
+      <a id="footerWhatsappLink2" target="_blank" rel="noopener">+92 327 7834621</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 SUFYAN FRAGRANCES. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a class="floating-whatsapp" id="floatingWhatsapp" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="tooltip">Order on WhatsApp</span>
+</a>
+
+<!-- ================= CART DRAWER ================= -->
+
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping bag">
+  <div class="cart-header">
+    <h2><i class="fa-solid fa-bag-shopping"></i> Your Bag</h2>
+    <button id="cartCloseBtn" aria-label="Close bag"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-line"><span>Subtotal</span><span id="cartSubtotal">PKR 0</span></div>
+    <button class="btn btn-gold btn-block" id="cartCheckoutBtn">Proceed to Checkout</button>
+  </div>
+</aside>
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div class="modal-overlay" id="productModalOverlay">
+  <div class="modal product-modal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <button class="modal-close" id="productModalCloseBtn" aria-label="Close product details"><i class="fa-solid fa-xmark"></i></button>
+    <div class="product-modal-body" id="productModalBody"><!-- injected by JS --></div>
+  </div>
+</div>
+
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div class="modal-overlay" id="checkoutModalOverlay">
+  <div class="modal checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+    <button class="modal-close" id="checkoutModalCloseBtn" aria-label="Close checkout"><i class="fa-solid fa-xmark"></i></button>
+    <h2 id="checkoutModalTitle">Complete Your Order</h2>
+
+<div class="checkout-grid">
+  <form id="checkoutForm" class="checkout-form" novalidate>
+    <label for="custName">Full Name *</label>
+    <input type="text" id="custName" name="custName" required autocomplete="name">
+
+    <label for="custPhone">Phone Number *</label>
+    <input type="tel" id="custPhone" name="custPhone" required autocomplete="tel">
+
+    <label for="custEmail">Email</label>
+    <input type="email" id="custEmail" name="custEmail" autocomplete="email">
+
+    <label for="custAddress">Address *</label>
+    <textarea id="custAddress" name="custAddress" rows="2" required autocomplete="street-address"></textarea>
+
+    <label for="custCity">City *</label>
+    <input type="text" id="custCity" name="custCity" required autocomplete="address-level2">
+
+    <label for="custNotes">Additional Notes</label>
+    <textarea id="custNotes" name="custNotes" rows="2"></textarea>
+
+    <p class="form-error" id="checkoutFormError" role="alert"></p>
+  </form>
+
+  <div class="order-summary">
+    <h3>Order Summary</h3>
+    <div class="order-items" id="orderItems"></div>
+    <div class="order-line"><span>Subtotal</span><span id="orderSubtotal">PKR 0</span></div>
+    <div class="order-line"><span>Delivery</span><span id="orderDelivery">PKR 250</span></div>
+    <div class="order-line order-total"><span>Total</span><span id="orderTotal">PKR 0</span></div>
+    <button class="btn btn-gold btn-block" id="orderWhatsappBtn">
+      <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+    </button>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<!-- ================= TOAST CONTAINER ================= -->
+
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
